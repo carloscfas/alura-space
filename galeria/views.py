@@ -12,7 +12,7 @@ def imagem(request, foto_id):
     return render(request , 'galeria/imagem.html', {"fotografia": fotografia})
 
 def buscar(request):
-    fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)
+    fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)
 
     if "buscar" in request.GET:
         nome_a_buscar = request.GET['buscar']
